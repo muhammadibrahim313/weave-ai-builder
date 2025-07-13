@@ -91,21 +91,20 @@ client.search.search(
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <div key={index} className="glass-card p-6 hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <feature.icon className="w-5 h-5 text-primary" />
+            <div key={index} className="feature-card p-8 group">
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <feature.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-white">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
               
-              <p className="text-muted-foreground mb-6">
-                {feature.description}
-              </p>
-              
-              <div className="mb-6">
+              <div className="mt-6">
                 {feature.visual}
               </div>
             </div>

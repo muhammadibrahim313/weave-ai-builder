@@ -34,15 +34,15 @@ const Hero = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Build smarter
-          <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          Build smarter{' '}
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             agents
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           Empower agents with deep knowledge about your user's apps and workspaces.
         </p>
 
@@ -64,58 +64,37 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Animated Network Visualization */}
-        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="glass-card p-8 max-w-4xl mx-auto">
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
-              {/* App Icons with connection lines */}
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">DB</span>
+        {/* Enhanced Network Visualization */}
+        <div className="mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <div className="glass-card p-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
+              {[
+                { name: 'Database', icon: 'DB', color: 'from-blue-500 to-blue-600' },
+                { name: 'APIs', icon: 'API', color: 'from-emerald-500 to-emerald-600' },
+                { name: 'Gmail', icon: '📧', color: 'from-red-500 to-red-600' },
+                { name: 'Calendar', icon: '📅', color: 'from-orange-500 to-orange-600' },
+                { name: 'Slack', icon: '💬', color: 'from-purple-500 to-purple-600' },
+                { name: 'AI Agent', icon: '🤖', color: 'from-indigo-500 to-indigo-600' }
+              ].map((item, index) => (
+                <div key={index} className="flex flex-col items-center space-y-2 group">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-white font-bold text-sm">{item.icon}</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground font-medium">{item.name}</span>
                 </div>
-                <span className="text-xs text-muted-foreground">Database</span>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">API</span>
-                </div>
-                <span className="text-xs text-muted-foreground">APIs</span>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">📧</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Gmail</span>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">📅</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Calendar</span>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">📊</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Analytics</span>
-              </div>
-              
-              <div className="flex flex-col items-center space-y-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">🤖</span>
-                </div>
-                <span className="text-xs text-muted-foreground">AI Agent</span>
-              </div>
+              ))}
             </div>
             
-            <div className="mt-6 text-center">
-              <p className="text-sm text-muted-foreground">
-                Connect your data sources → Sync automatically → Power your agents
-              </p>
+            <div className="mt-8 text-center">
+              <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+                <span>Connect</span>
+                <div className="w-2 h-2 bg-primary/60 rounded-full"></div>
+                <span>Sync</span>
+                <div className="w-2 h-2 bg-primary/60 rounded-full"></div>
+                <span>Search</span>
+                <div className="w-2 h-2 bg-primary/60 rounded-full"></div>
+                <span>Power your agents</span>
+              </div>
             </div>
           </div>
         </div>

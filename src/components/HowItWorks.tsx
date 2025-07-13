@@ -7,14 +7,14 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-20 px-6">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Empower your agent with
-            <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Empower your agent with{' '}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               search
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             Get started in three steps.
           </p>
         </div>
