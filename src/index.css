@@ -206,6 +206,10 @@
     66% { transform: translateY(5px) rotate(-1deg); }
   }
   
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
   /* Pulse glow animation */
   @keyframes pulse-glow {
     0%, 100% { 
@@ -234,5 +238,10 @@
   
   .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  /* Radial gradient utility */
+  .bg-radial-gradient {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
 }
