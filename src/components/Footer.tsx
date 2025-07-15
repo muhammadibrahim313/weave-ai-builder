@@ -1,79 +1,140 @@
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 py-12 px-6">
+    <footer className="bg-gray-50 border-t border-gray-200 py-16 px-6">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Left Column - Company Info */}
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Column 1 - Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-sm"></div>
               </div>
-              <span className="text-xl font-bold text-white">Airweave</span>
+              <span className="text-xl font-bold text-gray-900">Weave</span>
             </div>
             
-            <p className="text-muted-foreground max-w-sm">
-              Airweave simplifies agent-building with powerful, no-code solutions, instant data sync, and scalable deployment options, making it easier than ever to create intelligent agents.
+            <p className="text-gray-600 max-w-xs">
+              Empowering AI agents with deep knowledge about your users' apps and workspaces for more intelligent interactions.
             </p>
             
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="text-muted-foreground hover:text-white transition-colors"
+                className="text-gray-500 hover:text-gray-900 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="text-muted-foreground hover:text-white transition-colors"
+                className="text-gray-500 hover:text-gray-900 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
               </a>
+              <a 
+                href="#" 
+                className="text-gray-500 hover:text-gray-900 transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Middle Column - Quick Links */}
+          {/* Column 2 - Product */}
           <div className="space-y-4">
-            <h4 className="text-white font-medium">Quick Links</h4>
-            <nav className="flex flex-col space-y-2">
-              <a href="#how-it-works" className="text-muted-foreground hover:text-white transition-colors">
+            <h4 className="text-gray-900 font-semibold">Product</h4>
+            <nav className="flex flex-col space-y-3">
+              <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors">
                 How It Works
               </a>
-              <a href="#features" className="text-muted-foreground hover:text-white transition-colors">
+              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Features
               </a>
-              <a href="#compare" className="text-muted-foreground hover:text-white transition-colors">
-                Compare
+              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Pricing
               </a>
-              <a href="#testimonials" className="text-muted-foreground hover:text-white transition-colors">
-                Testimonials
+              <a href="#faqs" className="text-gray-600 hover:text-gray-900 transition-colors">
+                FAQs
               </a>
             </nav>
           </div>
 
-          {/* Right Column - Legal */}
+          {/* Column 3 - Resources */}
           <div className="space-y-4">
-            <h4 className="text-white font-medium">Legal</h4>
-            <nav className="flex flex-col space-y-2">
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors">
+            <h4 className="text-gray-900 font-semibold">Resources</h4>
+            <nav className="flex flex-col space-y-3">
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Documentation
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                API Reference
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Blog
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Changelog
+              </a>
+            </nav>
+          </div>
+
+          {/* Column 4 - Company & Legal */}
+          <div className="space-y-4">
+            <h4 className="text-gray-900 font-semibold">Company</h4>
+            <nav className="flex flex-col space-y-3">
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                About Us
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Careers
+              </a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-white transition-colors">
-                Terms & Conditions
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
+                Terms of Service
               </a>
             </nav>
           </div>
         </div>
 
+        {/* Newsletter */}
+        <div className="border-t border-gray-200 mt-12 pt-8">
+          <div className="max-w-md mx-auto md:mx-0">
+            <h4 className="text-gray-900 font-semibold mb-3">Subscribe to our newsletter</h4>
+            <p className="text-gray-600 mb-4">Get the latest updates and news delivered to your inbox.</p>
+            <div className="flex">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Copyright */}
-        <div className="border-t border-white/10 mt-8 pt-8 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Airweave. All rights reserved.
+        <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-600 mb-4 md:mb-0">
+            © 2024 Weave AI. All rights reserved.
           </p>
+          <div className="flex space-x-6">
+            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+              Terms of Service
+            </a>
+            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>

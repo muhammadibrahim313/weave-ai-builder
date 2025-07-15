@@ -1,109 +1,104 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Github, ArrowRight } from 'lucide-react';
-import NetworkBackground from './NetworkBackground';
-import FloatingAppIcons from './FloatingAppIcons';
-import GlassmorphismCards from './GlassmorphismCards';
+import { ArrowRight, Github, Database, Search, Zap } from 'lucide-react';
 
 const EnhancedHero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Deep gradient background with vignette */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f1123] via-[#1a1c2c] to-[#0f1123]" />
-      
-      {/* Vignette effect */}
-      <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/40" />
-      
-      {/* Soft blue and purple glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400/5 rounded-full blur-3xl" />
-      
-      {/* Network background */}
-      <NetworkBackground />
-      
-      {/* Floating app icons */}
-      <FloatingAppIcons />
-      
-      {/* Glassmorphism cards */}
-      <GlassmorphismCards />
-
-      {/* Main content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        {/* Y Combinator Badge */}
-        <div className="mb-8 animate-fade-in-up">
-          <Badge 
-            variant="outline" 
-            className="backdrop-blur-xl bg-white/5 border-orange-500/30 text-orange-400 px-6 py-3 text-sm font-medium hover:bg-white/10 transition-all duration-300"
-          >
-            <span className="mr-2 text-orange-500">🚀</span>
-            Backed by Y Combinator
-          </Badge>
-        </div>
-
-        {/* Main Headline */}
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-tight animate-fade-in-up tracking-tight" style={{ animationDelay: '0.2s', fontFamily: 'Inter, system-ui, sans-serif' }}>
-          Build smarter{' '}
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">
-            agents
-          </span>
-        </h1>
-
-        {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in-up font-light" style={{ animationDelay: '0.4s', letterSpacing: '-0.01em' }}>
-          Empower agents with deep knowledge about your user's apps and workspaces.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="group backdrop-blur-xl bg-white/5 border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 px-8 py-4 text-lg font-medium min-w-[200px] hover:scale-105"
-          >
-            <Github className="w-5 h-5 mr-3" />
-            GitHub
-          </Button>
-          <Button 
-            size="lg"
-            className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 transition-all duration-300 px-8 py-4 text-lg font-medium min-w-[200px] hover:scale-105 shadow-2xl hover:shadow-blue-500/25"
-          >
-            Talk to a Founder
-            <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
-
-        {/* Enhanced Network Visualization */}
-        <div className="mt-20 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl p-8 max-w-6xl mx-auto shadow-2xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
-              {[
-                { name: 'Database', icon: '🗄️', color: 'from-blue-500 to-blue-600', glow: 'shadow-blue-500/20' },
-                { name: 'APIs', icon: '🔗', color: 'from-emerald-500 to-emerald-600', glow: 'shadow-emerald-500/20' },
-                { name: 'Gmail', icon: '📧', color: 'from-red-500 to-red-600', glow: 'shadow-red-500/20' },
-                { name: 'Calendar', icon: '📅', color: 'from-orange-500 to-orange-600', glow: 'shadow-orange-500/20' },
-                { name: 'Slack', icon: '💬', color: 'from-purple-500 to-purple-600', glow: 'shadow-purple-500/20' },
-                { name: 'AI Agent', icon: '🤖', color: 'from-indigo-500 to-indigo-600', glow: 'shadow-indigo-500/20' }
-              ].map((item, index) => (
-                <div key={index} className="flex flex-col items-center space-y-3 group">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-xl ${item.glow} group-hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/10`}>
-                    <span className="text-2xl">{item.icon}</span>
-                  </div>
-                  <span className="text-sm text-gray-300 font-medium tracking-wide">{item.name}</span>
-                </div>
-              ))}
+    <section className="relative py-24 overflow-hidden bg-white">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Content */}
+          <div className="space-y-8">
+            {/* Tagline */}
+            <div className="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium">
+              AI-Powered Workspace Integration
             </div>
             
-            <div className="mt-10 text-center">
-              <div className="flex items-center justify-center space-x-4 text-sm text-gray-400">
-                <span className="font-medium">Connect</span>
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse"></div>
-                <span className="font-medium">Sync</span>
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                <span className="font-medium">Search</span>
-                <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                <span className="font-medium">Power your agents</span>
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight">
+              Build smarter agents with <span className="text-blue-600">deep knowledge</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="text-xl text-gray-600 max-w-xl leading-relaxed">
+              Empower your AI agents with comprehensive access to your users' apps and workspaces for more intelligent, context-aware interactions.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base font-medium"
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 text-base font-medium"
+              >
+                <Github className="w-4 h-4 mr-2" />
+                View on GitHub
+              </Button>
+            </div>
+            
+            {/* Trust Indicators */}
+            <div className="pt-6">
+              <p className="text-sm text-gray-500 mb-3">Trusted by innovative teams</p>
+              <div className="flex flex-wrap gap-6 items-center">
+                <img src="https://placehold.co/100x30/e2e8f0/64748b?text=Company" alt="Company logo" className="h-6 opacity-70" />
+                <img src="https://placehold.co/100x30/e2e8f0/64748b?text=Company" alt="Company logo" className="h-6 opacity-70" />
+                <img src="https://placehold.co/100x30/e2e8f0/64748b?text=Company" alt="Company logo" className="h-6 opacity-70" />
+                <img src="https://placehold.co/100x30/e2e8f0/64748b?text=Company" alt="Company logo" className="h-6 opacity-70" />
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Column - Feature Cards */}
+          <div className="relative">
+            {/* Background element */}
+            <div className="absolute -z-10 top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-50 rounded-full opacity-50 blur-3xl"></div>
+            
+            {/* Feature Cards */}
+            <div className="relative grid gap-6">
+              {/* Card 1 */}
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-blue-50 rounded-lg">
+                    <Database className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Unified Data Access</h3>
+                    <p className="text-gray-600">Connect to 20+ apps and data sources with a single API</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Card 2 */}
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300 ml-8">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-green-50 rounded-lg">
+                    <Search className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Intelligent Search</h3>
+                    <p className="text-gray-600">Powerful search capabilities across all connected workspaces</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Card 3 */}
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-purple-50 rounded-lg">
+                    <Zap className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Multi-Tenant Support</h3>
+                    <p className="text-gray-600">Secure OAuth2-based authentication for all your users</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
